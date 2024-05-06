@@ -1,0 +1,207 @@
+/* CSS Variables */
+
+:root {
+    --primary:  #ffffff;
+    --dark: #0b232a;
+    --light: #03c8b4;
+    --seconday: #bbde60;
+}
+
+@font-face {
+    font-family: "jersey";
+    src: url("fonts/AbrilFatface-Regular.ttf");
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--primary);
+}
+
+body {
+    background: #0b232a;
+    margin: 0.2rem 0.2rem;
+    line-height: 1;
+}
+
+.btn {
+    background: var(--primary);
+    color: var(--light);
+    padding: 0.5rem 0.5rem;
+    text-decoration: none;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+}
+
+/* Navigation */
+.main-nav ul {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 0; 
+    list-style: none; /* no bullets */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+    background-color: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background-color: var(--dark);
+    color: var(--primary);
+}
+
+/* Top Container ctrl / */
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        'poster-display-box'
+        'showcase';
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Showcase */
+.showcase {
+    font-family: jersey;
+    grid-area: showcase;
+    min-height: 400px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    /* the line above makes the fucking names actually show to the center */
+    justify-content: center;
+}
+
+.showcase h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.showcase p {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.showcase h2 {
+    font-family: jersey;
+    font-size: 2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.4rem;
+}
+
+.showcase a {
+    margin-top: 0.5rem;
+    color: var(--light);
+    font-weight: bold;
+}
+
+.showcase i {
+    color: var(--light);
+}
+
+.box {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 0.5rem;
+}
+
+.poster-display-box {
+    grid-area: poster-display-box;
+}
+
+footer {
+    margin-top: 1rem;
+    background: var(--primary);
+    color: var(--dark);
+    padding: 0.1rem;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media(max-width: 700px) {
+    .top-container {
+        grid-template-areas: 
+           'poster-display-box'
+           'showcase'
+    }
+
+    .showcase h1 {
+        font-size: 1.5rem
+    }
+
+    .main-nav ul {
+        grid-template-columns: 2fr;
+    }
+}
+
+.a {
+    border-bottom: 1px solid var(--seconday);
+    color: var(--seconday);
+    padding-bottom: .1em;
+    text-decoration: none;
+  }
+  
+a:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}%3C/style%3E%3Cpath fill='none' stroke='%23bbde60' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 1rem;
+    border-bottom: 0;
+    padding-bottom: .1em;
+    text-decoration: none;
+  }
+
+.box.btn:hover {
+    position: relative; /* Required for absolute positioning */
+  }
+  
+  .box.btn:hover::after {
+    content: "mew mew mew mew mew mew"; /* Initial text */
+    position: absolute;
+    opacity: 0; /* Initially hidden */
+    animation: slideText 2s linear infinite; /* Adjust speed as needed */
+  }
+  
+  @keyframes slideText {
+    0% {
+      left: -2rem; /* Start off-screen left */
+      opacity: 0;
+    }
+    50% {
+      opacity: 1; /* Fade in */
+    }
+    100% {
+      left: 8rem; /* End off-screen right */
+      opacity: 0;
+    }
+
+  }
+
+
+  
+  
+  
